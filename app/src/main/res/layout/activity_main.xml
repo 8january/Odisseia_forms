@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#134D86"
+    android:fadingEdgeLength="10dp"
+    android:scrollbarSize="4dp"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="52dp">
+
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="700dp"
+        android:background="@drawable/corner_radius"
+        android:elevation="20dp"
+        android:fadeScrollbars="false"
+        android:outlineAmbientShadowColor="#000000"
+        android:outlineProvider="background"
+        android:outlineSpotShadowColor="#000000"
+        android:scrollbarSize="5dp"
+        android:verticalScrollbarPosition="defaultPosition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdgeLength="2dp"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Formulário de pesquisa do projeto ODISSEIA"
+                android:textAlignment="center"
+                android:textColor="#141414"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="14dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Qual seu nome?"
+                android:textColor="#141414"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColorHint="#3C3939"
+                app:boxBackgroundColor="#FBF8F8"
+                app:boxStrokeColor="#ffbe2f"
+                app:boxStrokeErrorColor="#FE4725"
+                app:boxStrokeWidth="1.5dp"
+                app:hintTextColor="#474747"
+                app:placeholderTextColor="#505050">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nomeInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_margin="2dp"
+                    android:hint="nome completo:" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Em sua perspectiva, quais as principais causas de desinteresse e desmotivação dos alunos, em sala de aula?"
+                android:textColor="#141414"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/check_one"
+                android:layout_width="265dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/corner_radius2"
+                android:backgroundTint="#F3F3F3"
+                android:text="Abordagem de ensino repetitiva"
+                android:textAlignment="viewStart"
+                android:textColor="#141414"
+                android:textSize="14sp"
+                app:buttonIconTint="#FFbe2f" />
+
+            <CheckBox
+                android:id="@+id/check_two"
+                android:layout_width="265dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/corner_radius2"
+                android:backgroundTint="#F3F3F3"
+                android:text="Falta de participação ativa dos alunos nas aulas"
+                android:textAlignment="textStart"
+                android:textColor="#141414"
+                app:buttonIconTint="#FFbe2f" />
+
+            <CheckBox
+                android:id="@+id/check_three"
+                android:layout_width="265dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/corner_radius2"
+                android:backgroundTint="#F3F3F3"
+                android:text="Conteúdo desconexo com a realidade do aluno"
+                android:textAlignment="textStart"
+                android:textColor="#141414"
+                android:textSize="14sp"
+                app:buttonIconTint="#FFbe2f" />
+
+            <CheckBox
+                android:id="@+id/check_four"
+                android:layout_width="265dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/corner_radius2"
+                android:backgroundTint="#F3F3F3"
+                android:checked="false"
+                android:singleLine="false"
+                android:text="Falta de integração de recursos digitais apropriados"
+                android:textColor="#141414"
+                app:buttonIconTint="#FFbe2f" />
+
+            <CheckBox
+                android:id="@+id/check_five"
+                android:layout_width="265dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:background="@drawable/corner_radius2"
+                android:backgroundTint="#F3F3F3"
+                android:checked="false"
+                android:text="Não tratar das dificuldades individuais do aluno"
+                android:textColor="#141414"
+                app:buttonIconTint="#FFbe2f" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="22dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Softwares educacionais gamificados são ferramentas que integram elementos de jogos ao processo de ensinio-aprendizagem. Você já utilizou algum software educacional?"
+                android:textAllCaps="false"
+                android:textColor="#141414"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <Switch
+                android:id="@+id/switch_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alpha="0.9"
+                android:autoSizeTextType="uniform"
+                android:autoText="false"
+                android:checked="false"
+                android:elegantTextHeight="false"
+                android:fontFamily="sans-serif-medium"
+                android:showText="false"
+                android:splitTrack="false"
+                android:switchTextAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:text="Não"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:textColor="#141414"
+                android:textOff="Não"
+                android:textOn="Sim"
+                android:textSize="12sp"
+                android:thumbTint="#FFBE2F"
+                android:trackTint="#FFBE2F"
+                android:typeface="normal" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Qual a função mais atrativa em um software educacional gamificado?"
+                android:textColor="#141414"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radio_one"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:checked="false"
+                    android:text="Jogos educacionais"
+                    android:textColor="#141414" />
+
+                <RadioButton
+                    android:id="@+id/radio_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Quizzes interativos"
+                    android:textColor="#141414" />
+
+                <RadioButton
+                    android:id="@+id/radio_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Sistema de recompensa"
+                    android:textColor="#141414" />
+
+                <RadioButton
+                    android:id="@+id/radio_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Interação com narrativas"
+                    android:textColor="#141414" />
+
+                <RadioButton
+                    android:id="@+id/radio_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Competições entre usuários"
+                    android:textColor="#141414" />
+
+            </RadioGroup>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="18dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Você acredita que a utilização de softwares educacionais que utilizam a proposta gamificada no ambiente de sala de aula ajuda a engajar e motivar o aluno?"
+                android:textColor="#141414"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <ToggleButton
+                android:id="@+id/toggleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#ffbe2f"
+                android:textColor="#141414"
+                android:textOff="Não"
+                android:textOn="Sim" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="21dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFBE2F"
+                android:onClick="enviar"
+                android:text="ENVIAR"
+                android:textColor="#141414"
+                app:cornerRadius="4dp" />
+
+            <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#141414" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/TopYellowCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-136dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/yellow_circle" />
+
+    <ImageView
+        android:id="@+id/TopRedCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-75dp"
+        android:layout_marginTop="-30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/red_circle" />
+
+    <ImageView
+        android:id="@+id/BottomRedCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="292dp"
+        android:layout_marginTop="611dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/red_circle" />
+
+    <ImageView
+        android:id="@+id/BottomLightCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-94dp"
+        android:layout_marginTop="520dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light_blue_circle" />
+
+    <ImageView
+        android:id="@+id/bottomLightCircleTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="748dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light_blue_circle" />
+
+    <ImageView
+        android:id="@+id/BottomDarkCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-75dp"
+        android:layout_marginTop="413dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dark_blue_circle" />
+
+    <ImageView
+        android:id="@+id/LeftYellowCircle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="233dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/yellow_circle" />
+
+    <ImageView
+        android:id="@+id/LeftGreenCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="315dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/green_circle" />
+
+    <ImageView
+        android:id="@+id/BottomGreenCircle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="700dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/green_circle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="214dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/odisseia___logo_white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
