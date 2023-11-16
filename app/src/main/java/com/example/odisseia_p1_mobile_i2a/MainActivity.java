@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Switch;
@@ -38,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
         c_five = findViewById(R.id.check_five);
 
         s_one = findViewById(R.id.switch_one);
+        s_one.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(s_one.isChecked())
+                    s_one.setText("Sim");
+                else s_one.setText("Não");
+            }
+        });
 
         r_one = findViewById(R.id.radio_one);
         r_two = findViewById(R.id.radio_two);
@@ -51,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public void prev(){
         previous = result.getText().toString() + "\n";
     }
-
-
+    
     public void enviar(View view){ total++;
         result = findViewById(R.id.result);
         result.setText("\n" + "Nome completo:" + nomeInput.getText().toString());
@@ -104,7 +112,14 @@ public class MainActivity extends AppCompatActivity {
 
         if(!hasChecked){
             result.setText(previous + "Nenhuma das opções!");
+            prev();
         }
+
+        c_one.setChecked(false);
+        c_two.setChecked(false);
+        c_three.setChecked(false);
+        c_four.setChecked(false);
+        c_five.setChecked(false);
 
         result.setText(previous + "Você..");
         prev();
@@ -115,37 +130,40 @@ public class MainActivity extends AppCompatActivity {
         }else result.setText(previous + " nunca utilizou uma plataforma educacional antes.");
         prev();
 
-        result.setText(previous + "Para você, a função mais atrativa em um software gamificado é: ");
+        s_one.setChecked(false);
+        result.setText(previous + "Para você, as funções mais atrativav em um software gamificado incluem: ");
+        prev();
+
         if(r_one.isChecked()){
             String r = r_one.getText().toString();
             result.setText(previous + r);
             prev();
             rc_one++;
-
+            r_one.setChecked(false);
         }else if(r_two.isChecked()){
             String r = r_two.getText().toString();
             result.setText(previous + r);
             prev();
             rc_two++;
-
+            r_two.setChecked(false);
         }else if(r_three.isChecked()){
             String r = r_three.getText().toString();
             result.setText(previous + r);
             prev();
             rc_three++;
-
+r_three.setChecked(false);
         }else if(r_four.isChecked()){
             String r = r_four.getText().toString();
             result.setText(previous + r);
             prev();
             rc_four++;
-
+            r_four.setChecked(false);
         }else if(r_five.isChecked()){
             String r = r_five.getText().toString();
             result.setText(previous + r);
             prev();
             rc_five++;
-
+            r_five.setChecked(false);
         }else result.setText(previous + "Nenhuma das opções!");
 
         result.setText(previous + "Você..");
@@ -156,30 +174,30 @@ public class MainActivity extends AppCompatActivity {
             result.setText(previous + "Acredita que a gamificação pode engajar os alunos.");
         }else result.setText(previous + "Não acredita que a gamificação pode engajar os alunos.");
         prev();
-
+        t_one.setChecked(false);
         String finalResult = "Resultados gerais:\n" +
                 "Quantidade de participantes: " + total +
                 "\n2. Em sua perspectiva, quais as principais causas de desinteresse e desmotivação dos alunos, em sala de aula?" +
                 "\nAbordagem de ensino repetitiva: " + cc_one +
-                "\nFalta de participação ativa dos alunos nas aulas" + cc_two +
-                "\nConteúdo desconexo com a realidade do aluno" + cc_three +
-                "\nFalta de integração de recursos digitais apropriados" + cc_four +
-                "\nNão tratar das dificuldades individuais do aluno" + cc_five +
+                "\nFalta de participação ativa dos alunos nas aulas: " + cc_two +
+                "\nConteúdo desconexo com a realidade do aluno: " + cc_three +
+                "\nFalta de integração de recursos digitais apropriados: " + cc_four +
+                "\nNão tratar das dificuldades individuais do aluno: " + cc_five +
                 "\n3. Softwares educacionais gamificados são ferramentas que integram elementos de jogos" +
                 " ao processo de ensinio-aprendizagem. " +
                 "Você já utilizou algum software educacional?" +
                 "\nSim:" + sc_one +
                 "\nNão:" + (total - sc_one) +
                 "\n4. Qual a função mais atrativa em um software educacional gamificado?" +
-                "\nJogos educacionais" + rc_one +
-                "\nQuizzes interativos" + rc_two +
-                "\nSistema de recompensa" + rc_three +
-                "\nInteração com narrativas" + rc_four +
-                "\nCompetições entre usuários" + rc_five +
+                "\nJogos educacionais: " + rc_one +
+                "\nQuizzes interativos: " + rc_two +
+                "\nSistema de recompensa: " + rc_three +
+                "\nInteração com narrativas: " + rc_four +
+                "\nCompetições entre usuários: " + rc_five +
                 "\n5. Você acredita que a utilização de softwares educacionais que utilizam a proposta gamificada" +
                 " no ambiente de sala de aula ajuda a engajar e motivar o aluno?" +
-                "\nSim:" + tc_one +
-                "\nNão:" + (total - tc_one);
+                "\nSim: " + tc_one +
+                "\nNão: " + (total - tc_one);
 
         result.setText(previous + "\n" + finalResult);
     }
